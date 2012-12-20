@@ -1,0 +1,8 @@
+#AuthType Basic
+#AuthName "TEST"
+#AuthUserFile .htpasswd
+#require valid-user
+
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !.*/index.php$
+RewriteRule ^(.*)$ public/$1 [L]
