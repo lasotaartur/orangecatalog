@@ -1,0 +1,185 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0;	padding: 0;	border: 0;	outline: 0;		vertical-align: baseline;	background: transparent;}
+ol, ul {list-style: none;}
+body, div {position:relative}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+:focus {	outline: 0;}
+table {	border-collapse: collapse;	border-spacing: 0;}
+
+.clearfix:after {content: ".";	display: block;	/*clear: both;*/visibility: hidden;	line-height: 0;	height: 0;}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+html, body {height:100%}
+article, aside, footer, header, nav, section {display: block;position:relative}
+body {background:#fbfbfb;font: 100 13px/16px arial}
+a {text-decoration:none}
+
+a::selection {background:#2B2B2B;color:#fff;}
+a::-moz-selection {background:#2B2B2B;color:#fff;}
+ul::selection {background:#2B2B2B;color:#fff;}
+ul::-moz-selection {background:#2B2B2B;color:#fff;}
+li::selection {background:#2B2B2B;color:#fff;}
+li::-moz-selection {background:#2B2B2B;color:#fff;}
+div:selection {background:#2B2B2B;color:#fff;}
+div::-moz-selection {background:#2B2B2B;color:#fff;}
+p::selection {background:#2B2B2B;color:#fff;}
+p::-moz-selection {background:#2B2B2B;color:#fff;}
+
+.C606060 {color:#606060}
+.C888888 {color:#888888}
+.Cbebebe {color:#bebebe}
+
+#menu {background:#2b2b2b;width:100%;height:24px;font-weight:700;padding-top:6px}
+#menu a {color:#6c6c6c}
+#menu a:hover {color:#888888}
+#menu ul {float:left;padding-left:20px}
+#menu ul li {float:left;padding-right:20px}
+.top-help {float:right;display:block;padding-right:20px}
+			
+#header {width:1000px;margin:auto;padding:50px 0 0;height:249px;overflow:visible}
+#header img {padding-left:39px;width:784px;height:308px}
+#header h1 {position:absolute;left:215px;top:230px;font:700 14px/14px georgia;text-transform:uppercase}
+.search {position:absolute;right:65px;top:120px;width:250px;height:40px;border:1px solid #ddd;background:#fff}
+.search input {height:34px;width:180px;color:#aaa;padding:2px 10px;border:none}
+.search a {float:right;display:block;text-indent:-9999px;width:40px;height:38px;background:url(../images/sprite.png) -321px -11px #f6f6f6;margin:1px}
+.search a:hover {opacity:0.8}
+
+#content {width:1000px;margin:auto}
+#breadcrumb {padding: 14px 0 10px;float: left;}
+#breadcrumb a:hover {text-decoration:underline}
+
+.add {width:963px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;padding:14px 14px 14px 21px;margin:40px 0 10px;background:#fff}
+.add:hover {border-left:1px solid #ddd;border-top:1px solid #ddd;border-bottom:2px solid #ddd;border-right:1px solid #ddd;}
+.add .step-1 input {height:34px;width:770px;color:#aaa;padding:2px 10px;border:none;font-size:17px;background:transparent}
+.add .step-1 a {cursor:pointer;float:right;background:#519d00;display:block;height:13px;width:120px;color:#fff;font-weight:700;font-size:13px;line-height:13px;text-transform:uppercase;padding:14px 9px 13px}
+.add .step-1 a:hover {opacity:0.95}
+
+.bad-url-notification {background:url(../images/error.png) -2px 5px no-repeat;border-top: 1px solid #eee;width: 953px;color:#EC2F00;margin-left: 10px;margin-top: 10px;padding-top: 4px;padding-left:18px;font: 100 13px/16px arial;display:none}
+
+.categories {width:998px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden}
+.tags {width:938px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;padding:30px;margin-top:10px;background:#fff}
+.tags a {color:#888888}
+.tags .tag-level-1 {font: 700 26px/26px arial}
+.tags .tag-level-2 {font: 700 22px/22px arial}
+.tags .tag-level-3 {font: 700 18px/18px arial}
+.tags .tag-level-4 {font: 700 13px/13px arial}
+.tags .tag-level-5 {font: 700 11px/11px arial}
+
+.goUp {clear: both;width:1000px;margin:auto}
+.goUp a {float:right;padding:10px 0 10px 20px;cursor:pointer;display:block;background:url(../images/sprite.png) -282px -102px}
+
+ul.categories-level-1 {display: table-cell;width:218px;border-right:1px solid #ececec;float:left;padding:30px 0 30px 30px}
+ul.categories-level-1.last {border-right:none}
+ul.categories-level-1 li {}
+ul.categories-level-1 li a {color:#666}
+ul.categories-level-1 li.header a {color:#666;font: 700 15px/15px arial}
+ul.categories-level-1 li.header a:hover {text-decoration:underline}
+ul.categories-level-1 li.header {padding-bottom:10px}
+ul.categories-level-1 li.header a span {color:#888;font-size:11px;font-weight:100}
+
+ul.categories-level-2 {padding-bottom:30px}
+ul.categories-level-2 li {}
+ul.categories-level-2 li a {/*color:#666;*/font: 100 11px/16px arial}
+ul.categories-level-2 li a span {color:#888;font-size:10px}
+ul.categories-level-2 li a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:4px;content:"\00bb"}*/
+
+ul.categories-level-2 li a.showMore {cursor: pointer;background: #519D00;display: block;height: 10px;width: 53px;color: white;font-weight: 700;font-size: 10px;line-height: 10px;text-transform: uppercase;padding: 3px 3px 4px 6px;margin-top: 15px;}
+ul.categories-level-2 li a.showMore:hover {opacity:0.9;text-decoration:none}/*:after {position:absolute;padding-left:4px;content:"\00bb"}*/
+
+#footer {background:#2b2b2b;width:100%;margin-top:40px;padding-bottom:60px}
+#footer-content {width:1000px;margin:auto}
+#footer-content ul.menu {float:left;width:150px;border-right:1px solid #3b3b3b;margin-top:38px}
+#footer-content ul.menu li a {color:#fdc030;line-height:20px}
+#footer-content ul.menu li a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
+#footer-content ul.sponsor {float:left;width:170px;border-right:1px solid #3b3b3b;margin-top:38px;padding-left:35px}
+#footer-content ul.sponsor li.header {color:#747474;font-weight:700}
+#footer-content ul.sponsor li a {color:#747474;line-height:20px}
+#footer-content ul.sponsor li a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
+#footer-content ul.about {float:left;margin-top:38px;padding-left:35px;width:270px}
+#footer-content ul.about li span {color:#747474;font-weight:700}
+#footer-content ul.about li a {color:#747474;line-height:20px}
+#footer-content ul.about li a:hover {text-decoration:underline} /*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
+#footer-content #about-text {display:block;width:410px;left:186px;position:absolute;top:138px;color:#747474;font-size:11px}
+.copyright {width:260px;height:115px;float:right;background:#3b3b3b;padding:70px 0 0 40px}
+.copyright a {display:block;width:202px;height:61px;background:url(../images/sprite.png) 0 -96px;text-indent:-9999px}
+.copyright a:hover {opacity:0.8}
+.copyright p {font-size:10px;color:#000000}
+
+.add input {height:34px;width:770px;color:#aaa;padding:2px 10px;border:none;font-size:17px;background:transparent}
+
+#catalogForm {padding:20px 0 0 20px}
+#catalogForm label {color:#777;clear:left;float:left;display:block;padding-bottom:10px;position: relative}
+#catalogForm label span {display:block;float:left;width:150px;height:10px;padding:10px}
+#catalogForm label input {display:block;float:left;font-size:17px;width:400px;height:30px;border:1px solid #f3f3f3}
+#catalogForm label input:hover {border:1px solid #ddd}
+#catalogForm label input:focus {border:1px solid #ddd}
+#catalogForm label textarea {font:100 13px/16px arial;color:#aaaaaa;width:400px;height:150px;border:1px solid #f3f3f3;padding:10px}
+#catalogForm label textarea:hover {border:1px solid #ddd}
+#catalogForm label textarea:focus {border:1px solid #ddd}
+#catalogForm ul {float:left;padding-left:20px;color:red;width:280px}
+#catalogForm ul li {padding-left:20px;background:url(../images/error.png) 0 0 no-repeat}
+#catalogForm #submitButton {cursor:pointer;height:39px;color:#fff;font-weight:700;font-size:13px;line-height:13px;text-transform:uppercase;background: #519D00;color: white;width: 179px;clear: left;margin: 0 0 20px 170px;display: block}
+#catalogForm #submitButton:hover {opacity:0.95}
+
+.categoryTree {width:200px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden;float:left;clear: both;padding:30px}
+.categoryTree ul {}
+.categoryTree ul li a {color:#666}
+.categoryTree ul li.header {font: 100 13px/16px arial}
+.categoryTree ul li.header a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
+
+.categoryTree ul li.headerActive a {color:#666;font-weight:700}
+.categoryTree ul li.headerActive a span {font-weight:100}
+.categoryTree ul li.headerActive a:hover {text-decoration:underline}
+.categoryTree ul li.list {padding: 0px 0 0px 10px;/*border-left: 1px solid #EEE;*/font: 100 11px/16px arial;margin: 5px 0 5px 0;}
+.categoryTree ul li.list a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
+.categoryTree ul li.listActive {font-weight:700}
+.categoryTree ul li.listActive span {font-weight:100}
+.categoryTree ul li span {color:#888;font-size:11px}
+
+.categoryList {width:724px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden;float:right;}
+.categoryList ul {}
+.categoryList ul li {border-bottom:1px solid #eee;padding: 30px;color:#666}
+.categoryList ul li.last {border:none}
+
+
+.categoryList ul li h3 {}
+.categoryList ul li h3 a {color:#666;float:left;font-size:16px}
+.categoryList ul li h3 a:hover {text-decoration:underline}
+.categoryList ul li em {display:block;float:right;font:100 11px/13px arial;color:#ccc}
+.categoryList ul li a.adress {color:#ccc;clear:both;padding-bottom:8px;float: left;font-size:11px}
+.categoryList ul li .description {clear:both}
+.categoryList ul li .description a {cursor:pointer;background:#519d00;display:block;height:10px;width:52px;color:#fff;font-weight:700;font-size:10px;line-height:10px;text-transform:uppercase;padding:3px 3px 4px 6px;margin-top:9px}
+.categoryList ul li .description a:hover {opacity:0.9}
+.categoryList ul li ul li {border:none;padding:0;margin:0}
+.categoryList ul li ul li  {display:block;float:left}
+
+/*.categoryPagination {width:724px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden;float:right;margin-top:10px}
+.categoryPagination ul {padding:22px 30px 18px;}
+.categoryPagination ul li {display:block;float:left}
+.categoryPagination ul li a {color:#666;font: 100 16px/16px arial;display: block;padding: 0 10px}
+.categoryPagination ul li.active a {font-weight:700}*/
+
+div.sbHolder {display:block;float:left;width:408px;height:18px;border:1px solid #f3f3f3;padding:8px 3px 5px 9px}
+div.sbHolder:hover {border:1px solid #ddd}
+a.sbSelector {display:block;font-size:17px;color:#aaa}
+a.sbToggle {display:none}
+
+ul.sbOptions {background:#fff;position: absolute;z-index: 20;padding:6px!important;width:408px!important;left:-1px;border:1px solid #f3f3f3;top:-1px!important;max-height:none!important}
+ul.sbOptions li {background-image:none!important;display:block;margin:0;padding:3px!important;cursor:pointer}
+ul.sbOptions li a {color:#aaa;font:100 17px/17px arial}
+ul.sbOptions li:hover {background:#f8f8f8!important}
+
+/*div.selectbox-wrapper {position: absolute;width: 421px!important;background-color: white;border: 1px solid #CCC;margin: -10px 0px 0px 0px;
+padding: 0px;text-align: left;max-height: 200px;left: 170px;z-index: 10;top: 47px;overflow: auto;}
+
+div.selectbox-wrapper ul li.selected { background-color: red;}
+div.selectbox-wrapper ul li.current {  background-color: blue;}*/
+
+.infoEmptyCategory {padding:30px}
+.infoEmptyCategory a {cursor:pointer;background:#519d00;display:block;height:10px;width:52px;color:#fff;font-weight:700;font-size:10px;line-height:10px;text-transform:uppercase;padding:3px 3px 4px 6px;margin-top:9px}
+.infoEmptyCategory a:hover {opacity:0.9}
+
+ul.categoryPagination {float:left;display:block;padding:12px}
+ul.categoryPagination li {display: inline}
+ul.categoryPagination li a {color:#777}

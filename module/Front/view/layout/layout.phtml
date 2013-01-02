@@ -1,0 +1,160 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Orange Catalog - SEO, Darmowy katalog stron internetowych')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/css/style.css')
+        ?>
+
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()->prependFile($this->basePath() . '/js/script.js', 'text/javascript')
+                ->prependFile($this->basePath() . '/js/scrollto.js')
+                ->prependFile($this->basePath() . '/js/jquery.selectbox.js')
+//                ->prependFile($this->basePath() . '/js/jquery.min.js')
+                ->prependFile('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js')
+        ?>
+                
+        <base href="/" />
+
+    </head>
+    <body class="C888888">
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="" title="">
+                        Dodaj swoją stronę
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        Usuń stronę z katalogu
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        Dodaj kategorię
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url('page', array('action' => 'regulamin')); ?>">Regulamin</a>
+                </li>
+            </ul>
+            <a href="" class="top-help" title="">
+                Pomoc
+            </a>
+        </nav>
+        <header id="header">
+            <a href="/" title="Orange Catalog - Wyciskamy strony jak pomarańcze :-)">
+                <img src="images/logo-orange-catalog.png" alt="Orange Catalog - Wyciskamy strony jak pomarańcze :-)" />
+            </a>
+            <h1>
+                <span class="C606060">SEO</span><br/>
+                <span class="C888888">Darmowy katalog</span><br/>
+                <span class="Cbebebe">Stron internetowych</span>
+            </h1>
+            <section class="search">
+                <input type="text" />
+                <a href="" title="">
+                    Przeszukaj katalog »
+                </a>
+            </section>
+        </header>
+        <section id="content">
+            <?php echo $this->content; ?>
+        </section>
+        <section class="goUp">
+            <a title="Powrót na górę strony">
+                powrót na górę strony
+            </a>
+        </section>
+        <footer id="footer" class="clearfix">
+            <section id="footer-content">
+                <ul class="menu">
+                    <li>
+                        <a href="" title="">
+                            Dodaj stronę
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" title="">
+                            Usuń stronę
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" title="">
+                            Dodaj kategorię
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->url('page', array('action' => 'regulamin')); ?>">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->url('page', array('action' => 'kontakt')); ?>" title="">
+                            Kontakt
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->url('page', array('action' => 'pomoc')); ?>" title="">
+                            Pomoc
+                        </a>
+                    </li>
+                </ul>
+                <ul class="sponsor">
+                    <li class="header">
+                        Linki sponsorowane
+                    </li>
+                    <li>
+                        <a href="http://www.iandecapoeira.pl" title="Treningi capoeira - sztuka walki, akrobatyka, muzyka">
+                            iandecapoeira.pl
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.zmyslova.pl" title="Sosnowiec - Salon kosmetyczny">
+                            zmyslova.pl
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.siemianowice.iandecapoeira.pl" title="Capoeira Siemianowice Śląskie">
+                            capoeira siemianowice
+                        </a>
+                    </li>
+                </ul>
+                <ul class="about">
+                    <li>
+                        <span>
+                            Design&code:
+                        </span>
+                        <a href="mailto:nomysz@yahoo.com" title="Designer & Webcoder">
+                            nomysz@yahoo.com
+                        </a>
+                    </li>
+                    <li>
+                        <span>
+                            Programmer:
+                        </span>
+                        <a href="mailto:lasota.artur@gmail.com" title="Programowanie PHP & MySQL">
+                            lasota.artur@gmail.com
+                        </a>
+                    </li>
+                </ul>
+                <p id="about-text">
+                    Katalog serwisów internetowych Orange Catalog & SEO jest w pełni funkcjonalnym, profesjonalnym narzędziem do pozycjonowania i promocji w internecie. Darmowa rejestracja w katalogu oraz intuicyjna funkcjonalność - tylko u nas :-)
+                </p>
+                <article class="copyright">
+                    <a href="/" title="Kriejtiv KRI EJSZONS">
+                        Kriejtiv KRI EJSZONS
+                    </a>
+                    <p>Wszystkie prawa zastrzeżone</p>
+                </article>
+            </section>
+        </footer>
+<?php echo $this->inlineScript() ?>
+    </body>
+</html>

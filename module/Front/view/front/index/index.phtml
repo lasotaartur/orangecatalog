@@ -1,0 +1,54 @@
+<article class="add clearfix">
+        <div class="step-1">
+                <form>
+                        <input type="text" val="" name="www"/>
+                        <a title="+ Dodaj stronę">
+                                + Dodaj stronę
+                        </a>
+                        <p class="bad-url-notification">
+                                podaj właściwy adres strony
+                        </p>
+                </form>
+        </div>
+        <div class="step-2" style="display:none">
+                <?php echo $this->render('front/web/ajaxadd.phtml')?>
+        </div>
+</article>
+<article class="categories clearfix">
+   
+        <?php foreach($categoryTreeParts as $index=>$categoryTree):?>
+        <ul class="categories-level-1 <?php if($index == 3)echo 'last';?>">
+                <?php foreach($categoryTree as $category):?>
+                    <li class="header">
+                        <a href="<?php echo $this->url('web', array('action'=>'index','categoryUrl'=>$category->url));?>" title="">
+                                <?php echo $category->name;?> <span>(<?php echo $category->countWeb?>)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <ul class="categories-level-2">
+                            <?php $children = array_slice($category->children, 0, 10); ?>
+                            <?php foreach($children as $subcategory):?>
+                            <li>
+                                    <a href="<?php echo $this->url('web', array('action'=>'index','categoryUrl'=>$subcategory->url));?>" title="">
+                                           <?php echo $subcategory->name;?> <span>(<?php echo $subcategory->countWeb?>)</span>
+                                    </a>
+                            </li>
+                            <?php endforeach;?>
+                            <?php if(count($category->children)>10):?>
+                            <li>
+                                <a href="<?php echo $this->url('web', array('action'=>'index','categoryUrl'=>$category->url));?>" title="" class="showMore">
+                                        + więcej</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    
+                <?php endforeach;?>
+        </ul>
+        <?php endforeach;?>
+</article>
+<article class="tags">
+        <?php foreach($tags as $tag) {?>
+            <a href="" title="" class="tag-level-<?php echo $tag->priority;?>"><?php echo $tag->name;?></a>
+        <?php }?>
+</article>

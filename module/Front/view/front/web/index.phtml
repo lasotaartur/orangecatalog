@@ -1,0 +1,64 @@
+<section id="breadcrumb" >
+        <a class="C888888" href="/" title="Powrót do strony głównej">orange catalog</a> › <a class="C888888" href="/" title="nazwa kategorii">nazwa kategorii</a>
+</section>
+<article class="categoryTree">
+    <ul>
+        <?php foreach($categoryTree as $category):?>
+        <li class="header<?php if($categorySelected->id == $category->id):?>Active<?php endif;?>">
+            <a href="<?php echo $this->url('web', array('action'=>'index', 'categoryUrl'=>$category->url));?>" title="">
+                <?php echo $category->name;?> <span>(<?php echo $category->countWeb?>)</span>
+            </a>
+        </li>
+        <?php if(count($category->children) > 0 
+                && ($categorySelected->id == $category->id || $categorySelected->idParent == $category->id)): ?>
+        <li class="list">
+            <ul>
+                <?php foreach($category->children as $subcategory):?>
+                <li class="<?php if($categorySelected->id == $subcategory->id):?>listActive<?php endif;?>">
+                    <a href="<?php echo $this->url('web', array('action'=>'index', 'categoryUrl'=>$subcategory->url));?>" title="">
+                        <?php echo $subcategory->name;?> <span>(<?php echo $subcategory->countWeb?>)</span>
+                    </a>
+                </li>
+                <?php endforeach;?>
+            </ul>
+        </li>
+        <?php endif; ?>
+        <?php endforeach;?>
+    </ul>
+</article>
+<article class="categoryList">
+    <?php $countWeb = $paginator->getTotalItemCount(); if($countWeb > 0): ?>
+    <ul>
+        <?php foreach($paginator as $index=>$web): ?>
+        <li<?php if(($index+1) == $countWeb)echo ' class="last"';?>>
+            <h3>
+                <a href="<?php echo $this->url('webShow', array('action'=>'show', 'id'=>$web->id));?>" title="<?php echo $web->title?>"> 
+                    <?php echo $web->title?>
+                </a>
+            </h3>
+            <em>
+                <?php echo $web->data?>
+            </em>
+            <a href="<?php echo $this->url('webShow', array('action'=>'show', 'id'=>$web->id));?>" title="<?php echo $web->title?>" class="adress clearfix">
+                <?php echo $web->www?>
+            </a>
+            <p class="description">
+                 <?php echo $web->description?>
+                <a href="<?php echo $this->url('webShow', array('action'=>'show', 'id'=>$web->id));?>">
+                    + więcej
+                </a>
+            </p>
+        </li>
+        <?php endforeach;?>
+    </ul>
+</article>
+<?php echo $this->paginationControl($paginator, 'Jumping', 'front/web/pager.phtml', array('url' => $url)); ?>
+
+<?php else:?>
+<p class="infoEmptyCategory">
+    Ta kategoria nie zawiera jeszcze zgłoszonych pozycji. Dodaj stronę jako pierwszy!
+    <a href="" title="Dodaj stronę do tej kategorii">
+        + DODAJ
+    </a>
+</p>
+<?php endif;?>

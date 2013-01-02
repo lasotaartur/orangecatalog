@@ -1,0 +1,196 @@
+AuthType Basic
+AuthName "TEST"
+AuthUserFile /var/www/elecity/test/.htpasswd
+require valid-user
+
+Order Deny,Allow
+Allow from all
+Satisfy All
+
+php_value register_globals 0
+php_value session.auto_start 0
+php_value session.use_cookies 1
+php_value session.use_trans_sid 0
+php_value session.gc_maxlifetime 1800
+php_value post_max_size 20M
+php_value upload_max_filesize 20M
+
+#SetEnv APPLICATION_ENV test
+
+# 1 GODZINA
+<FilesMatch "\.(ico|pdf|flv)$">
+Header set Pragma "cache"
+Header set Cache-Control "s-maxage=3600, public"
+</FilesMatch>
+
+# 30 MINUT
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Pragma "cache"
+Header set Cache-Control "s-maxage=1800, public"
+</FilesMatch>
+
+# 30 SEKUND
+#<FilesMatch "\.(html|htm|php|xml|txt|css|js)$">
+#Header set Pragma "cache"
+#Header set Cache-Control "s-maxage=30, public"
+#</FilesMatch>
+
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+<Files ~ "\.(tpl|inc|cfg)$">
+    Order allow,deny
+    Deny from all
+</files>
+Options -Indexes 
+Options +FollowSymlinks
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^elecity.pl [NC]
+RewriteRule ^(.*)$ http://www.elecity.pl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^megamarket.org.pl [NC]
+RewriteRule ^(.*)$ http://www.megamarket.com.pl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www.megamarket.org.pl [NC]
+RewriteRule ^(.*)$ http://www.megamarket.com.pl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^megamarket.com.pl [NC]
+RewriteRule ^(.*)$ http://www.megamarket.com.pl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^123klik.pl [NC]
+RewriteRule ^(.*)$ http://www.123klik.pl/$1 [L,R=301]
+
+# dla 123klik
+RewriteRule ^aparaty-kompaktowe$ aparaty-cyfrowe [L,R=301]
+
+# dla pzu
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^pzu$ /?mod=strona&id=181 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^index.html$ / [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^produkt-(.*),([0-9]*).html$ /index.php?stary=$1  [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z]*).html$ /?mod=$1  [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z]*)-([a-zA-Z]*).html?$ /?mod=$1&act=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z]*)-([a-zA-Z]*)-([0-9]*).html$ /?mod=$1&act=$2&id=$3 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),zestaw-([0-9]+)$ /?mod=produkty&act=zestaw&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),b-([0-9]*)$ /?mod=banner&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),ad-([0-9]*)$ /?mod=adrotator&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),kb-([0-9]*)$ /?mod=banner&act=kliknij&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^czy-([a-zA-Z0-9-]*),porownanie-([0-9]+)$ /?mod=produkty&act=porownanie&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^czy-([a-zA-Z0-9-]*)$ /?mod=produkty&act=porownanie&produkty=$1 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),a-([0-9]+)$ /?mod=aktualnosci&act=zobacz&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),s-([0-9]+)$ /?mod=strona&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),ar-([0-9]+)$ /?mod=artykuly&act=zobacz&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),mt-([0-9]+)$ /?mod=megapedia&act=termin&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),po-([0-9]+)$ /?mod=artykuly&act=index&kat_id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),id-([0-9]+)$ /?mod=produkty&act=zobacz&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),id-([0-9]+),polec$ /?mod=polec&act=produkt&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),id-([0-9]+),zapytaj$ /?mod=produkty&act=zapytaj&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),id-([0-9]+),([a-zA-Z]*)$ /?mod=produkty&act=zobacz&tab=$3&id=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*)-p-([0-9]+)$ /?mod=produkty&act=zobacz&id_stare=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*)-c-([0-9]+)$ /?mod=produkty&act=index&id_stare=$2 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*)-c-([0-9]+)_([0-9]+)$ /?mod=produkty&act=index&id_stare=$2&id_stare2=$3 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^wszystkie$ /?mod=produkty&act=wszystkie [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^szukaj$ /?mod=produkty&act=index&zaawansowane=1 [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^contact_us$ /kontakt.html  [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^serwisy$ /?mod=serwisy&act=index [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*)$ /index.php?param=$1  [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*),([a-zA-Z0-9-]*)$ /index.php?param=$1&param2=$2  [NC,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]*).([a-zA-Z0-9-,]*)$ /index.php?param=$1&param3=$2  [NC,L,QSA]
+
+RewriteRule (.jpg|.jpeg|.gif|.png|.css|.js$|/errorpages/|.ico|.tpl|.xml|.swf) - [L,QSA]

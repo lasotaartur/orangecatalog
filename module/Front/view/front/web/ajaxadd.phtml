@@ -1,0 +1,29 @@
+<?php
+
+if($this->result == true) {
+    echo "Dodane";
+}else{
+    $form = $this->form;
+    $form->setAttribute('action', $this->url(
+        'web',
+        array(
+            'action' => 'ajaxadd'
+        )
+    ));
+    $form->prepare();
+
+    echo $this->form()->openTag($form);
+    echo $this->formRow($form->get('www'));
+    echo $this->formRow($form->get('title'));
+    echo $this->formRow($form->get('description'));
+    echo $this->formRow($form->get('keywords'));
+    echo $this->formRow($form->get('category_parent')->setAttribute('class', 'selectCategory'));
+    echo $this->formRow($form->get('id_category')->setAttribute('class', 'selectCategory'));
+    echo $this->formRow($form->get('category_parent2')->setAttribute('class', 'selectCategory'));
+    echo $this->formRow($form->get('id_category2')->setAttribute('class', 'selectCategory'));
+    echo $this->formRow($form->get('email'));
+    echo $this->formSubmit($form->get('submit'));
+    echo $this->form()->closeTag();  
+}
+
+

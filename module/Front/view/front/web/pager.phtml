@@ -1,0 +1,27 @@
+<?php if ($this->pageCount): ?>
+
+    <ul class="categoryPagination clearfix">
+      <!-- Previous page link -->
+      <?php if (isset($this->previous)): ?>
+        <li class="previous">
+            <a href="<?= $url.'/'.$this->previous; ?>">«</a>
+        </li>      
+      <?php endif; ?>
+      <?php foreach ($this->pagesInRange as $page): ?>
+            
+      <?php if ($page != $this->current): ?>
+         <li>
+             <a href="<?= $url.'/'.$page; ?>"><?= $page; ?></a>&nbsp;
+         </li>
+      <?php else: ?>
+         <li class="active">
+      <?= $page; ?>
+         </li>
+      <?php endif; ?>
+      <?php endforeach; ?>
+      <?php if (isset($this->next)): ?>
+         <li class="next"><a href="<?= $url.'/'.$this->next; ?>">»</a></li>
+      <?php endif; ?>
+    </ul>
+
+<?php endif; ?>
