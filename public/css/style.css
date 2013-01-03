@@ -12,7 +12,7 @@ html[xmlns] .clearfix {display: block;}
 
 html, body {height:100%}
 article, aside, footer, header, nav, section {display: block;position:relative}
-body {background:#fbfbfb;font: 100 13px/16px arial}
+body {background:#fbfbfb;font: 100 13px/17px arial}
 a {text-decoration:none}
 
 a::selection {background:#2B2B2B;color:#fff;}
@@ -39,23 +39,23 @@ p::-moz-selection {background:#2B2B2B;color:#fff;}
 			
 #header {width:1000px;margin:auto;padding:50px 0 0;height:249px;overflow:visible}
 #header img {padding-left:39px;width:784px;height:308px}
-#header h1 {position:absolute;left:215px;top:230px;font:700 14px/14px georgia;text-transform:uppercase}
+#header h1 {position:absolute;left:215px;top:230px;font:900 14px/14px arial;text-transform:uppercase}
 .search {position:absolute;right:65px;top:120px;width:250px;height:40px;border:1px solid #ddd;background:#fff}
 .search input {height:34px;width:180px;color:#aaa;padding:2px 10px;border:none}
 .search a {float:right;display:block;text-indent:-9999px;width:40px;height:38px;background:url(../images/sprite.png) -321px -11px #f6f6f6;margin:1px}
 .search a:hover {opacity:0.8}
 
-#content {width:1000px;margin:auto}
-#breadcrumb {padding: 14px 0 10px;float: left;}
+#content {width:1000px;margin:auto;padding-top:40px}
+#breadcrumb {padding: 0 0 10px;float: left;}
 #breadcrumb a:hover {text-decoration:underline}
 
-.add {width:963px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;padding:14px 14px 14px 21px;margin:40px 0 10px;background:#fff}
+.add {width:963px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;padding:14px 14px 14px 21px;margin:0 0 10px;background:#fff}
 .add:hover {border-left:1px solid #ddd;border-top:1px solid #ddd;border-bottom:2px solid #ddd;border-right:1px solid #ddd;}
 .add .step-1 input {height:34px;width:770px;color:#aaa;padding:2px 10px;border:none;font-size:17px;background:transparent}
 .add .step-1 a {cursor:pointer;float:right;background:#519d00;display:block;height:13px;width:120px;color:#fff;font-weight:700;font-size:13px;line-height:13px;text-transform:uppercase;padding:14px 9px 13px}
 .add .step-1 a:hover {opacity:0.95}
 
-.bad-url-notification {background:url(../images/error.png) -2px 5px no-repeat;border-top: 1px solid #eee;width: 953px;color:#EC2F00;margin-left: 10px;margin-top: 10px;padding-top: 4px;padding-left:18px;font: 100 13px/16px arial;display:none}
+.bad-url-notification {background:url(../images/error.png) -2px 5px no-repeat;border-top: 1px solid #eee;width: 953px;color:#EC2F00;margin-left: 10px;margin-top: 10px;padding-top: 4px;padding-left:18px;font: 100 13px/17px arial;display:none}
 
 .categories {width:998px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden}
 .tags {width:938px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;padding:30px;margin-top:10px;background:#fff}
@@ -114,7 +114,7 @@ ul.categories-level-2 li a.showMore:hover {opacity:0.9;text-decoration:none}/*:a
 #catalogForm label input {display:block;float:left;font-size:17px;width:400px;height:30px;border:1px solid #f3f3f3}
 #catalogForm label input:hover {border:1px solid #ddd}
 #catalogForm label input:focus {border:1px solid #ddd}
-#catalogForm label textarea {font:100 13px/16px arial;color:#aaaaaa;width:400px;height:150px;border:1px solid #f3f3f3;padding:10px}
+#catalogForm label textarea {font:100 13px/17px arial;color:#aaaaaa;width:400px;height:150px;border:1px solid #f3f3f3;padding:10px}
 #catalogForm label textarea:hover {border:1px solid #ddd}
 #catalogForm label textarea:focus {border:1px solid #ddd}
 #catalogForm ul {float:left;padding-left:20px;color:red;width:280px}
@@ -125,13 +125,13 @@ ul.categories-level-2 li a.showMore:hover {opacity:0.9;text-decoration:none}/*:a
 .categoryTree {width:200px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden;float:left;clear: both;padding:30px}
 .categoryTree ul {}
 .categoryTree ul li a {color:#666}
-.categoryTree ul li.header {font: 100 13px/16px arial}
+.categoryTree ul li.header {font: 100 13px/17px arial}
 .categoryTree ul li.header a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
 
 .categoryTree ul li.headerActive a {color:#666;font-weight:700}
 .categoryTree ul li.headerActive a span {font-weight:100}
 .categoryTree ul li.headerActive a:hover {text-decoration:underline}
-.categoryTree ul li.list {padding: 0px 0 0px 10px;/*border-left: 1px solid #EEE;*/font: 100 11px/16px arial;margin: 5px 0 5px 0;}
+.categoryTree ul li.list {padding: 0px 0 0px 10px;/*border-left: 1px solid #EEE;*/font: 100 13px/17px arial;margin: 5px 0 5px 0;}
 .categoryTree ul li.list a:hover {text-decoration:underline}/*:after {position:absolute;padding-left:2px;content:"\00bb"}*/
 .categoryTree ul li.listActive {font-weight:700}
 .categoryTree ul li.listActive span {font-weight:100}
@@ -183,3 +183,22 @@ div.selectbox-wrapper ul li.current {  background-color: blue;}*/
 ul.categoryPagination {float:left;display:block;padding:12px}
 ul.categoryPagination li {display: inline}
 ul.categoryPagination li a {color:#777}
+
+.subPageContainer {color:#666;padding:30px;width:938px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden}
+.subPageContainer h2 {font:700 15px/15px arial}
+.subPageContainer ul.regulamin {list-style:decimal;padding:30px 30px 0 30px}
+.subPageContainer ul.regulamin li {height:20px;font:100 11px/16px arial}
+
+.showItem {color:#666;padding:30px;width:938px;margin:auto;border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;border-bottom:2px solid #DFDFDF;border-right:1px solid #DFDFDF;background:#fff;overflow: hidden}
+.showItem section {color:#666}
+.showItem section h3 a {color:#666;float:left;font-size:16px}
+.showItem section h3 a:hover {text-decoration:underline}
+.showItem section em {display:block;float:right;font:100 11px/13px arial;color:#ccc}
+.showItem section a.adress {color:#ccc;clear:both;padding-bottom:8px;float: left;font-size:11px}
+.showItem section .description {clear:both}
+.showItem section .description a {cursor:pointer;background:#519d00;display:block;height:10px;width:52px;color:#fff;font-weight:700;font-size:10px;line-height:10px;text-transform:uppercase;padding:3px 3px 4px 6px;margin-top:9px}
+.showItem section .description a:hover {opacity:0.9}
+
+
+
+
